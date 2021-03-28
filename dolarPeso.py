@@ -1,37 +1,60 @@
-dolar = input("Cuantos dolares quieres comprar?: ")
-dolar = float(dolar)
+# this is a Option?
+menu = """ 
+Bienvenidos a tu conversor de divisas 
 
-#valores
-pesoArg = 91.64
-impuestoPais = 0.30
-ganaArg = 0.35
+1- Pesos Argentinos
+2- Soles Peruanos
+3- Dolar Canadiense
 
-#impuestos
-p = pesoArg * impuestoPais
-p2 = pesoArg * ganaArg
+Elige una opccion: """
 
-#pago final en pesos
-pesoArg += p + p2
-pesoArg = round(pesoArg, 2)
+option = int(input(menu))
+dolar = float(input("Cuantos dolares quieres comprar?: "))
 
-#sol peruano
-solPer = 3.79
+#this is a function?
+def conversion(moneda):
+    total = moneda * dolar
+    total = round(total, 2)
+    return total
 
-#operaciones
-pago = pesoArg * dolar
-pago = round(pago, 2)
-pago = str(pago)
+#this is a conditional?
+if option == 1:
+    #impuestos
+    pesoArg = 91.64
+    impuestoPais = 0.30
+    ganaArg = 0.35
+    p = pesoArg * impuestoPais
+    p2 = pesoArg * ganaArg
+    pesoArg += p + p2
+    pesoArg = round(pesoArg, 2)
+    final = conversion(pesoArg)
+    dolar = str(dolar)
+    final = str(final)
+    print(dolar + " dolares es $" + final + "pesos")
 
-pago2 = solPer * dolar
-pago2 = round(pago2, 2)
-pago2 = str(pago2)
-dolar = round(dolar)
-dolar = str (dolar)
+elif option == 2:
+    solPer = 3.79
+    final = conversion(solPer)
+    final = round(final, 2)
+    final = str(final)
+    dolar = str(dolar) 
+    print(dolar + " dolares es $" + final + "soles")
+
+elif option == 3:
+    dolarCanad = 1.26
+    final = conversion(dolarCanad)
+    final = round(final)
+    final = str(final)
+    dolar = str(dolar)
+    print(dolar + " dolares es $" + final + " dolares canadienses")
 
 
-#costo final
-print(dolar + ' dolares son $' + pago + ' pesos')
-print(dolar + ' dolares son $' + pago2 + ' soles')
+
+
+
+
+
+
 
 
 
