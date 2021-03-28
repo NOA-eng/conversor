@@ -1,3 +1,10 @@
+#this is a function?
+def conversion(moneda):
+    total = moneda * dolar
+    total = round(total, 2)
+    return total
+
+
 # this is a Option?
 menu = """ 
 Bienvenidos a tu conversor de divisas 
@@ -11,11 +18,6 @@ Elige una opccion: """
 option = int(input(menu))
 dolar = float(input("Cuantos dolares quieres comprar?: "))
 
-#this is a function?
-def conversion(moneda):
-    total = moneda * dolar
-    total = round(total, 2)
-    return total
 
 #this is a conditional?
 if option == 1:
